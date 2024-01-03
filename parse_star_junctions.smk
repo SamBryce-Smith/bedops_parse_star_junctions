@@ -5,7 +5,6 @@ configfile: "config.yaml"
 project_dir = config["project_dir"]
 out_spot = config["out_spot"]
 bam_spot = config["bam_spot"]
-bam_suffix = config["bam_suffix"]
 sj_suffix = config["pt1_sj_suffix"]
 bed_file = config["bed_file"]
 final_output_name = config["final_output_name"]
@@ -20,14 +19,12 @@ else:
 
 
 # empty comma unpacks the tuple (so get sample wildcards as a list)
-# SAMPLES, = glob_wildcards(os.path.join(bam_dir, "{sample}" + bam_suffix))
 SAMPLES, = glob_wildcards(os.path.join(bam_dir, "{sample}" + sj_suffix))
 
-print(output_dir)
+print(f"Output directory - {output_dir}")
 print(f"Number of Input Samples {len(SAMPLES)}")
 
-
-localrules: all_output, copy_config
+localrules: all_output
 
 rule all_output:
     input:

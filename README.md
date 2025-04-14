@@ -1,5 +1,7 @@
 # Snakemake Pipeline: parse_star_junctions
 
+[![DOI](https://zenodo.org/badge/738526007.svg)](https://doi.org/10.5281/zenodo.15209897)
+
 ## Overview
 
 Pipeline for taking STAR's SJ.out files and parsing the counts for a given bed of named spliced junctions.
